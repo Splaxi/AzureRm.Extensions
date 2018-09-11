@@ -1,7 +1,7 @@
 # AzureRm.Extensions
 
 ## **Installation of the module**
-The module is hosted on https://www.powershellgallery.com and can there be installed by executing the following command:
+The module is hosted on https://www.powershellgallery.com and can therefore be installed by executing the following command:
 ```
 Install-Module AzureRm.Extensions
 ```
