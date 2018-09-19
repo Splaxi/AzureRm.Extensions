@@ -1,4 +1,33 @@
-﻿function Invoke-TimeSignal {
+﻿<#
+.SYNOPSIS
+Handle time measurements for execution
+
+.DESCRIPTION
+Function to enable the module to measure the execution time for any function
+
+.PARAMETER Start
+Switch to instruct the function that it should set a start mark for measurement
+
+.PARAMETER End
+Switch to instruct the function that it should stop the measurement and write the total time to the log / verbose stream
+
+.EXAMPLE
+Invoke-TimeSignal -Start
+
+This will create the first entry in the time tabel.
+This will enable the function to calculate the execution.
+
+.EXAMPLE
+Invoke-TimeSignal -End
+
+This will instruct the function to lookup the start time for the calling function and do the calculation.
+
+.NOTES
+
+Author: Mötz Jensen (@splaxi)
+
+#>
+function Invoke-TimeSignal {
     [CmdletBinding(DefaultParameterSetName = 'Start')]
     param (
         [Parameter(Mandatory = $true, ParameterSetName = 'Start', Position = 1 )]                    

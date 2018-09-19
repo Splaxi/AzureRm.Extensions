@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-Get Azure RM Resource 
+Get Azure RM Resource
 
 .DESCRIPTION
 Get Azure RM Resource
@@ -20,7 +20,7 @@ This will get all resources from the resource group named DEV.
 Get-AzureRmSubscriptionExt -SubscriptionName "*dev*" | Get-AzureRmResourceGroupExt -ResourceGroupName "*DEV*"
  | Get-AzureRmResourceExt
 
-This will select the subscription that matches the search *DEV*, find the resource group 
+This will select the subscription that matches the search *DEV*, find the resource group
 that matches *DEV* in that subscription and get all resources from that.
 
 .NOTES

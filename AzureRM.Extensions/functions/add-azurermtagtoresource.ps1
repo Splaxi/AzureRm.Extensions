@@ -35,15 +35,15 @@ Add-AzureRmTagToResource -ResourceGroupName "DEV" -TagValue "CustomerA"
 This will add tag "OrganizationName" with the value "CustomerA" to all
 resource found in the ResourceGroup named "DEV".
 
-.EXAMPLE 
+.EXAMPLE
 Get-AzureRmSubscriptionExt -SubscriptionName "*DEV*" | Get-AzureRmResourceGroupExt -ResourceGroupName "*DEV*" |
  Add-AzureRmTagToResource -TagValue "CustomerA"
 
 This will select the subscription named DEV and find the resource group name DEV,
-and add the tag "OrganizationName" with the value "CustomerA" to all resources 
+and add the tag "OrganizationName" with the value "CustomerA" to all resources
 in the resource group.
 
-.EXAMPLE 
+.EXAMPLE
 Get-AzureRmSubscriptionExt -SubscriptionName "*DEV*" | Get-AzureRmResourceGroupExt -ResourceGroupName "*DEV*" |
  Add-AzureRmTagToResource -ApplyParentTags
 
@@ -86,7 +86,7 @@ Function Add-AzureRmTagToResource {
 
         Write-PSFMessage -Level Verbose -Message "Testing if we should apply parent tag (true) or not (false)." -Target ($ApplyParentTags.IsPresent)
         if ($ApplyParentTags.IsPresent) {
-            $Tag = $resGroup.Tags                        
+            $Tag = $resGroup.Tags
         }
         else {
             $null = $Tag.Add($TagName, $TagValue)
@@ -97,7 +97,7 @@ Function Add-AzureRmTagToResource {
             $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName | Where-Object {$null -eq $_.tags -or $_.tags.Count -lt 1 -or $_.Tags.ContainsKey($TagName) -eq $false}
         }
         else {
-            $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName 
+            $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName
         }
 
         foreach ($item in $res) {

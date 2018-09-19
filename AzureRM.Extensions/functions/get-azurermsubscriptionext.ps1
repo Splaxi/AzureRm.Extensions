@@ -40,7 +40,7 @@ Function Get-AzureRmSubscriptionExt {
 
         Write-PSFMessage -Level Verbose -Message "Filtering all subscriptions that doesn't match the name" -Target $SubscriptionName
         foreach ($item in $regRes) {
-            $subs | Where-Object Name -eq $item | Select-Object 
+            $subs | Where-Object Name -eq $item | Select-Object
         }
     }
 

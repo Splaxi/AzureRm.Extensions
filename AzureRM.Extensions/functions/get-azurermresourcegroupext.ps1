@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-Get Azure RM Resource 
+Get Azure RM Resource
 
 .DESCRIPTION
 Get Azure RM Resource
@@ -12,26 +12,22 @@ Name of the Azure subscription that you want to work against
 Name of the resource group that you want to work against
 
 .PARAMETER WithoutTagOnly
-Switch to instruct the cmdlet to only list resource groups without
-any tag details
+Switch to instruct the cmdlet to only list resource groups without any tag details
 
 .EXAMPLE
 Get-AzureRmResourceGroupExt -SubscriptionName "DEV" -ResourceGroupName "*DEV*"
 
-This will get the resource group that contains the search *DEV* inside the
-subscription named DEV.
+This will get the resource group that contains the search *DEV* inside thesubscription named DEV.
 
 .EXAMPLE
 Get-AzureRmSubscriptionExt -SubscriptionName "*dev*" | Get-AzureRmResourceGroupExt -ResourceGroupName "*DEV*"
 
-This will get the subscription that matches the search *DEV* and 
-get the ResourceGroup that matches the search *DEV*.
+This will get the subscription that matches the search *DEV* and get the ResourceGroup that matches the search *DEV*.
 
 .EXAMPLE
 Get-AzureRmSubscriptionExt -SubscriptionName "*dev*" | Get-AzureRmResourceGroupExt -WithoutTagOnly
 
-This will get the subscription that matches the search *DEV* and 
-get all ResourceGroups that doesn't have a tag collection specified.
+This will get the subscription that matches the search *DEV* and get all ResourceGroups that doesn't have a tag collection specified.
 
 .NOTES
 Author: Mötz Jensen (@splaxi)
