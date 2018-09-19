@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
 Get Azure RM Resource 
 

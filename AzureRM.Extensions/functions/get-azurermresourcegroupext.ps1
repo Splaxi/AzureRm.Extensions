@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
 Get Azure RM Resource 
 
@@ -40,20 +40,23 @@ Function Get-AzureRmResourceGroupExt {
     [CmdletBinding()]
     param(
         [Parameter(ValueFromPipelineByPropertyName = $true)]
-        [Alias('Name')]
         [string] $SubscriptionName,
+
+        [Alias('Name')]
         [string] $ResourceGroupName = "*",
+
         [switch] $WithoutTagOnly
     )
     
     BEGIN {
+        if ($SubscriptionName) {
+            $sub = Get-AzureRmSubscription -SubscriptionName $SubscriptionName
+            $null = Select-AzureRmSubscription -SubscriptionObject $sub
+        }
     }
 
     PROCESS {
-        $sub = Get-AzureRmSubscription -SubscriptionName $SubscriptionName
-
-        $null = Select-AzureRmSubscription -SubscriptionObject $sub
-
+        
         Write-PSFMessage -Level Verbose -Message "Testing if we should work on resources without tags (true) or all resources (false)." -Target ($WithoutTagOnly.IsPresent)
         if ($WithoutTagOnly.IsPresent) {
             $resGroups = Get-AzureRmResourceGroup | Where-Object {$_.tags -eq $null -or $_.tags.Count -lt 1}

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
 Add a tag to an Azure Resource
 
