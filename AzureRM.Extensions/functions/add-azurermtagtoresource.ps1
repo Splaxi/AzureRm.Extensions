@@ -94,7 +94,7 @@ Function Add-AzureRmTagToResource {
 
         Write-PSFMessage -Level Verbose -Message "Testing if we should work on resources without tags (true) or all resources (false)." -Target ($WithoutTagOnly.IsPresent)
         if ($WithoutTagOnly.IsPresent) {
-            $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName | Where-Object {$_.tags -eq $null -or $_.tags.Count -lt 1 -or $_.Tags.ContainsKey($TagName) -eq $false}
+            $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName | Where-Object {$null -eq $_.tags -or $_.tags.Count -lt 1 -or $_.Tags.ContainsKey($TagName) -eq $false}
         }
         else {
             $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName 

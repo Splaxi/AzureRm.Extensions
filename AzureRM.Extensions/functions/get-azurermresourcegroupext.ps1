@@ -51,7 +51,7 @@ Function Get-AzureRmResourceGroupExt {
     BEGIN {
         if ($SubscriptionName) {
             $sub = Get-AzureRmSubscription -SubscriptionName $SubscriptionName
-            $null = Select-AzureRmSubscription -SubscriptionObject $sub
+            $null = Set-AzureRmContext -SubscriptionObject $sub
         }
     }
 
@@ -59,7 +59,7 @@ Function Get-AzureRmResourceGroupExt {
         
         Write-PSFMessage -Level Verbose -Message "Testing if we should work on resources without tags (true) or all resources (false)." -Target ($WithoutTagOnly.IsPresent)
         if ($WithoutTagOnly.IsPresent) {
-            $resGroups = Get-AzureRmResourceGroup | Where-Object {$_.tags -eq $null -or $_.tags.Count -lt 1}
+            $resGroups = Get-AzureRmResourceGroup | Where-Object {$null -eq $_.tags -or $_.tags.Count -lt 1}
         }
         else {
             $resGroups = Get-AzureRmResourceGroup

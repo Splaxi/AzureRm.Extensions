@@ -42,8 +42,6 @@ Function Get-AzureRmResourceExt {
     }
 
     PROCESS {
-        $resGroup = Get-AzureRmResourceGroup -Name $ResourceGroupName
-
         $res = Get-AzureRmResource -ResourceGroupName $ResourceGroupName
 
         Write-PSFMessage -Level Verbose -Message "Filtering all resources that doesn't match the name" -Target $Name
