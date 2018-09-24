@@ -27,7 +27,7 @@ from the resource group and use that when applying on the resource
 
 .PARAMETER WithoutTagOnly
 Switch to instruct the cmdlet to only apply the tag to resources
-with any tag details specified.
+with any tag details specified
 
 .EXAMPLE
 Add-AzureRmTagToResource -ResourceGroupName "DEV" -TagValue "CustomerA"
