@@ -3,7 +3,7 @@
     ModuleToProcess   = 'AzureRM.Extensions.psm1'
 	
     # Version number of this module.
-    ModuleVersion     = '0.1.3'
+    ModuleVersion     = '0.1.4'
 	
     # ID used to uniquely identify this module
     GUID              = '78de8635-5d5a-41aa-a858-1d3796d22f77'
