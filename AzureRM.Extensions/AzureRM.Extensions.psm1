@@ -1,5 +1,5 @@
 ﻿$script:ModuleRoot = $PSScriptRoot
-$script:ModuleVersion = "0.1.3"
+$script:ModuleVersion = "0.1.4"
 
 # Detect whether at some level dotsourcing was enforced
 $script:doDotSource = Get-PSFConfigValue -FullName AzureRM.Extensions.Import.DoDotSource -Fallback $false
