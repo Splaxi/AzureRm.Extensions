@@ -33,7 +33,7 @@ with any tag details specified.
 Add-AzureRmTagToResource -ResourceGroupName "DEV" -TagValue "CustomerA"
 
 This will add tag "OrganizationName" with the value "CustomerA" to all
-resource found in the ResourceGroup named "DEV".
+resource found in the ResourceGroup named "DEV"
 
 .EXAMPLE
 Get-AzureRmSubscriptionExt -SubscriptionName "*DEV*" | Get-AzureRmResourceGroupExt -ResourceGroupName "*DEV*" |
