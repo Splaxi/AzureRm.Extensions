@@ -1,0 +1,11 @@
+﻿TOPIC
+	about_AzureRM.Extensions
+	
+SHORT DESCRIPTION
+	Explains how to use the AzureRM.Extensions powershell module
+	
+LONG DESCRIPTION
+	<Insert Content here>
+
+KEYWORDS
+	AzureRM.Extensions
